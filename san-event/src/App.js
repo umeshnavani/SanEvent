@@ -45,6 +45,12 @@ const App = ({ location }) => (
       exact
       component={DashboardPage}
     />
+    <UserRoute
+      location={location}
+      path="/createEvent"
+      exact
+      component={DashboardPage}
+    />
   </div>
 );
 
