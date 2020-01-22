@@ -7,9 +7,11 @@ class EventForm extends React.Component {
   state = {
     data: {
       eventTitle: '',
-      participants: null
+      eventDate: '',
+      eventTime: '',
+      teamOneParticipants: [],
+      teamTwoParticipants: []
     },
-    participants: null,
     index: 0,
     loading: false,
     errors: {}
@@ -37,10 +39,17 @@ class EventForm extends React.Component {
 
   validate = data => {
     const errors = {};
-    if (!data.eventTitle) errors.title = "Can't be blank";
+    if (!data.eventTitle) errors.eventTitle = "Can't be blank";
     return errors;
   };
 
+  addParticipantTeamOne(){
+    this.setState({teamOneparticipants: [...this.setState.participants, ""]})
+  }
+
+  addParticipantTeamTwo(){
+    this.setState({teamTwoparticipants: [...this.setState.participants, ""]})
+  }
   render() {
     const { errors, data, loading } = this.state;
 
@@ -48,13 +57,28 @@ class EventForm extends React.Component {
       <Segment>
         <Form onSubmit={this.onSubmit} loading={loading}>
           <Grid columns={2} fluid stackable>
+          <Grid.Row>
+          <Form.Field error={!!errors.eventTitle}>
+                    <label htmlFor="email">Event Title</label>
+                    <input 
+                    id="eventTitle"
+                    name="eventTitle"
+                    placeholder="Event Title"
+                    value={data.eventTitle}
+                    onChange={this.onChange} />
+                    {errors.eventTitle && <InlineError text={errors.eventTitle} />}
+                </Form.Field>
+          </Grid.Row>
             <Grid.Row>
               <Grid.Column>
-                
+                <h1>Team One</h1>
+                <button>Add Participant</button>
+                )
               </Grid.Column>
 
               <Grid.Column>
-                
+              <h1>Team Two</h1>
+              <button>Add Participant</button>
               </Grid.Column>
             </Grid.Row>
 
