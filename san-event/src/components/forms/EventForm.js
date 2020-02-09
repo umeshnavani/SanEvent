@@ -9,9 +9,30 @@ class EventForm extends React.Component {
       eventTitle: '',
       eventDate: '',
       eventTime: '',
-      teamOneParticipants: [],
-      teamTwoParticipants: []
     },
+    teamOneParticipants: [],
+    teamTwoParticipants: [],
+    teamOneParticipantOne: '',
+    teamOneParticipantTwo: '',
+    teamOneParticipantThree: '',
+    teamOneParticipantFour: '',
+    teamOneParticipantFive: '',
+    teamOneParticipantSix: '',
+    teamOneParticipantSeven: '',
+    teamOneParticipantEight: '',
+    teamOneParticipantNine: '',
+    teamOneParticipantTen: '',
+
+    teamTwoParticipantOne: '',
+    teamTwoParticipantTwo: '',
+    teamTwoParticipantThree: '',
+    teamTwoParticipantFour: '',
+    teamTwoParticipantFive: '',
+    teamTwoParticipantSix: '',
+    teamTwoParticipantSeven: '',
+    teamTwoParticipantEight: '',
+    teamTwoParticipantNine: '',
+    teamTwoParticipantTen: '',
     index: 0,
     loading: false,
     errors: {}
@@ -44,11 +65,16 @@ class EventForm extends React.Component {
   };
 
   addParticipantTeamOne(){
-    this.setState({teamOneparticipants: [...this.setState.participants, ""]})
+    console.log("add participant clicked");
+    //add text box for user input
+    this.setState({teamOneparticipants: this.state.teamOneParticipants.concat("test1")});
+    console.log(this.state);
   }
 
+//this.setState({  arr: this.state.arr.concat('new value')})
+
   addParticipantTeamTwo(){
-    this.setState({teamTwoparticipants: [...this.setState.participants, ""]})
+    this.setState({teamTwoparticipants: [...this.setState.participants, ""]});
   }
   render() {
     const { errors, data, loading } = this.state;
@@ -72,13 +98,153 @@ class EventForm extends React.Component {
             <Grid.Row>
               <Grid.Column>
                 <h1>Team One</h1>
-                <button>Add Participant</button>
-                )
+                <input
+                id="teamOneOne"
+                    name="teamOneOne"
+                    placeholder="ParticipantOne Title"
+                    value={data.teamOneParticipantOne}
+                    onChange={this.onChange}
+                    />
+                <input
+                id="teamOneTwo"
+                    name="teamOneTwo"
+                    placeholder="ParticipantTwo Title"
+                    value={data.teamOneParticipantTwo}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneThree"
+                    name="teamOneThree"
+                    placeholder="ParticipantThree Title"
+                    value={data.teamOneParticipantThree}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneFour"
+                    name="teamOneFour"
+                    placeholder="ParticipantFour Title"
+                    value={data.teamOneParticipantFour}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneFive"
+                    name="teamOneFive"
+                    placeholder="ParticipantFive Title"
+                    value={data.teamOneParticipantFive}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneSix"
+                    name="teamOneSix"
+                    placeholder="ParticipantSix Title"
+                    value={data.teamOneParticipantSix}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneSeven"
+                    name="teamOneSeven"
+                    placeholder="ParticipantSeven Title"
+                    value={data.teamOneParticipantSeven}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneEight"
+                    name="teamOneEight"
+                    placeholder="ParticipantEight Title"
+                    value={data.teamOneParticipantEight}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneNine"
+                    name="teamOneNine"
+                    placeholder="ParticipantNine Title"
+                    value={data.teamOneParticipantNine}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamOneTen"
+                    name="teamOneTen"
+                    placeholder="ParticipantTen Title"
+                    value={data.teamOneParticipantTen}
+                    onChange={this.onChange}
+                    />
+                <button onClick={() => this.addParticipantTeamOne()}>Add Participant</button>
+                
               </Grid.Column>
 
               <Grid.Column>
               <h1>Team Two</h1>
-              <button>Add Participant</button>
+              <input
+                id="teamTwoOne"
+                    name="teamTwoOne"
+                    placeholder="ParticipantOne Title"
+                    value={data.teamTwoParticipantOne}
+                    onChange={this.onChange}
+                    />
+                <input
+                id="teamTwoTwo"
+                    name="teamTwoTwo"
+                    placeholder="ParticipantTwo Title"
+                    value={data.teamTwoParticipantTwo}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoThree"
+                    name="teamTwoThree"
+                    placeholder="ParticipantThree Title"
+                    value={data.teamTwoParticipantThree}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoFour"
+                    name="teamTwoFour"
+                    placeholder="ParticipantFour Title"
+                    value={data.teamTwoParticipantFour}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoFive"
+                    name="teamTwoFive"
+                    placeholder="ParticipantFive Title"
+                    value={data.teamTwoParticipantFive}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoSix"
+                    name="teamTwoSix"
+                    placeholder="ParticipantSix Title"
+                    value={data.teamTwoParticipantSix}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoSeven"
+                    name="teamTwoSeven"
+                    placeholder="ParticipantSeven Title"
+                    value={data.teamTwoParticipantSeven}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoEight"
+                    name="teamTwoEight"
+                    placeholder="ParticipantEight Title"
+                    value={data.teamTwoParticipantEight}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoNine"
+                    name="teamTwoNine"
+                    placeholder="ParticipantNine Title"
+                    value={data.teamTwoParticipantNine}
+                    onChange={this.onChange}
+                    />
+                    <input
+                id="teamTwoTen"
+                    name="teamTwoTen"
+                    placeholder="ParticipantTen Title"
+                    value={data.teamOneParticipantTen}
+                    onChange={this.onChange}
+                    />
+              <button onClick={() => this.addParticipantTeamTwo()}>Add Participant</button>
               </Grid.Column>
             </Grid.Row>
 
